@@ -16,7 +16,7 @@
 
 use ink_lang as ink;
 
-#[ink::contract(version = "0.1.0")]
+#[ink::contract(version = "2.1.1")]
 mod flipper {
     use ink_core::storage;
 
