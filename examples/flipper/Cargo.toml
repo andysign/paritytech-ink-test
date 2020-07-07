@@ -1,7 +1,7 @@
 [package]
 name = "flipper"
-version = "2.1.0"
-authors = ["Parity Technologies <admin@parity.io>"]
+version = "2.1.1"
+authors = ["Andy <a@domain.com>"]
 edition = "2018"
 
 [dependencies]
@@ -21,19 +21,21 @@ optional = true
 
 [lib]
 name = "flipper"
+path = "lib.rs"
 crate-type = [
 	# Used for normal contract Wasm blobs.
 	"cdylib",
-	# Used for ABI generation.
+	# Required for ABI generation, and using this contract as a dependency.
+	# If using `cargo contract build`, it will be automatically disabled to produce a smaller Wasm binary
 	"rlib",
 ]
 
 [features]
 default = ["test-env"]
 std = [
-    "ink_primitives/std",
     "ink_abi/std",
     "ink_core/std",
+    "ink_primitives/std",
     "scale/std",
     "type-metadata/std",
 ]
