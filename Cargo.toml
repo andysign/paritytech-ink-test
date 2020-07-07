@@ -1,0 +1,15 @@
+[workspace]
+members = [
+    "abi",
+    "core",
+    "lang",
+    "prelude",
+    "primitives",
+]
+exclude = [
+    "examples/",
+]
+
+[profile.release]
+panic = "abort"
+lto = true
